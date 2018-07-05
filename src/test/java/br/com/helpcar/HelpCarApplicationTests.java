@@ -1,4 +1,4 @@
-package br.com.decioluckow.insurer;
+package br.com.helpcar;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class InsurerApplicationTests {
+public class HelpCarApplicationTests {
 
 	@Test
 	public void contextLoads() {

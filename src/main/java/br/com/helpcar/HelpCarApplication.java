@@ -1,13 +1,13 @@
-package br.com.decioluckow.insurer;
+package br.com.helpcar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InsurerApplication {
+public class HelpCarApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InsurerApplication.class, args);
+		SpringApplication.run(HelpCarApplication.class, args);
 	}
 	
 }

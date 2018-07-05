@@ -1,0 +1,31 @@
+<!-- use -DLogback.configurationFile=/path/to/Logback.xml for external file -->
+<configuration>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-5p %d %c{2} - %m%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="GELF"
+		class="me.moocar.logbackgelf.GelfAppender">
+		<facility>Application_Name</facility>
+		<graylog2ServerHost>192.168.1.12</graylog2ServerHost>
+		<graylog2ServerPort>514</graylog2ServerPort>
+		<useLoggerName>true</useLoggerName>
+		<useThreadName>true</useThreadName>
+		<graylog2ServerVersion>0.9.6</graylog2ServerVersion>
+		<chunkThreshold>1000</chunkThreshold>
+		<messagePattern>%-5p %d %c{2} - %m%n</messagePattern>
+	</appender>
+	<appender name="ASYNC"
+		class="ch.qos.logback.classic.AsyncAppender">
+		<param name="queueSize" value="500" />
+		<appender-ref ref="GELF" />
+	</appender>
+	<root level="INFO">
+		<appender-ref ref="ASYNC" />
+	</root>
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
